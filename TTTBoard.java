@@ -66,7 +66,13 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char row1winner() {
-		return '\0';
+		if (board[1][0] == 'x' && board[1][1] == 'x' && board[1][2] == 'x') {
+			return 'x';
+		} else if (board[1][0] == 'o' && board[1][1] == 'o' && board[1][2] == 'o') {
+			return 'o';
+		} else {
+			return '\0';
+		}
 	}
 
 	/**
@@ -75,7 +81,13 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char row2winner() {
-		return '\0';
+		if(board[2][0] == 'x' && board[2][1] == 'x' && board[2][2] == 'x'){
+			return 'x';
+		} else if(board[2][0] == 'o' && board[2][1] == 'o' && board[2][2] == 'o'){
+			return 'o';
+		} else{
+			return '\0';
+		}
 	}
 
 	/**
@@ -84,7 +96,13 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char col0winner() {
-		return '\0';
+		if (board[0][0] == 'x' && board[1][0] == 'x' && board[2][0] == 'x') {
+			return 'x';
+		} else if (board[0][0] == 'o' && board[1][0] == 'o' && board[2][0] == 'o') {
+			return 'o';
+		} else {
+			return '\0';
+		}
 	}
 
 	/**
@@ -93,7 +111,13 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char col1winner() {
-		return '\0';
+		if (board[0][1] == 'x' && board[1][1] == 'x' && board[2][1] == 'x') {
+			return 'x';
+		} else if (board[0][1] == 'o' && board[1][1] == 'o' && board[2][1] == 'o') {
+			return 'o';
+		} else {
+			return '\0';
+		}
 	}
 
 	/**
@@ -102,7 +126,13 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char col2winner() {
-		return '\0';
+		if (board[0][2] == 'x' && board[1][2] == 'x' && board[2][2] == 'x') {
+			return 'x';
+		} else if (board[0][2] == 'o' && board[1][2] == 'o' && board[2][2] == 'o') {
+			return 'o';
+		} else {
+			return '\0';
+		}
 	}
 
 	/**
@@ -111,7 +141,13 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char diagLeftToRightWinner() {
-		return '\0';
+		if (board[0][0] == 'x' && board[1][1] == 'x' && board[2][2] == 'x') {
+			return 'x';
+		} else if (board[0][0] == 'o' && board[1][1] == 'o' && board[2][2] == 'o') {
+			return 'o';
+		} else {
+			return '\0';
+		}
 	}
 
 	/**
@@ -120,7 +156,13 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char diagRightToLeftWinner() {
-		return '\0';
+	if (board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x') {
+			return 'x';
+		} else if (board[0][2] == 'o' && board[1][1] == 'o' && board[2][0] == 'o') {
+			return 'o';
+		} else {
+			return '\0';
+		}
 	}
 
 	/**
@@ -129,7 +171,12 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char rowWinner() {
-		return '\0';
+		if(col1Winner() != '\0'){
+			return col1Winner();
+		} else if(col2Winner() != '\0'){
+			return col2Winner();
+		}
+		return col3Winner();
 	}
 
 	/**
@@ -138,7 +185,12 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char colWinner() {
-		return '\0';
+	if (col1Winner() == 'x' | col2Winner() = 'x' | col3Winner() = 'x') {
+			return 'x';
+		} else if (col1Winner == 'o' | col2Winner() = 'o' | col3Winner() = 'o') {
+			return 'o';
+		} else {
+			return '\0';
 	}
 
 	/**
@@ -147,7 +199,11 @@ public class TTTBoard {
 	 * @return 'x' if x wins, 'o' if o wins, and null (i.e. '\0') otherwise.
 	 */
 	public char diagWinner() {
-		return '\0';
+		if(diagRightToLeftWinner() == 'x'){
+			return 'x';
+		}
+		
+		
 	}
 	
 	/**
